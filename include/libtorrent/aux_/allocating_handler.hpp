@@ -70,8 +70,8 @@ namespace libtorrent { namespace aux {
 	constexpr std::size_t debug_tick = 0;
 #endif
 #if TORRENT_USE_SSL
-	constexpr std::size_t openssl_read_cost = 94;
-	constexpr std::size_t openssl_write_cost = 94;
+	constexpr std::size_t openssl_read_cost = 74 + 5 * sizeof(void*);
+	constexpr std::size_t openssl_write_cost = 74 + 5 * sizeof(void*);
 #else
 	constexpr std::size_t openssl_read_cost = 0;
 	constexpr std::size_t openssl_write_cost = 0;
